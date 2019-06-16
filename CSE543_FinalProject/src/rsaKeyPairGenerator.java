@@ -21,7 +21,8 @@ public class rsaKeyPairGenerator {
 	 */
 	public rsaKeyPairGenerator() throws NoSuchAlgorithmException {
         KeyPairGenerator keyGen = KeyPairGenerator.getInstance("RSA");
-        keyGen.initialize(1024);
+        //depending what you set this too, the longer it takes
+        keyGen.initialize(4096);
         KeyPair pair = keyGen.generateKeyPair();
         this.privateKey = pair.getPrivate();
         this.publicKey = pair.getPublic();
